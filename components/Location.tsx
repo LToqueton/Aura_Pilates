@@ -19,14 +19,14 @@ export default function Location() {
               <div className="info-icon">📞</div>
               <div className="info-text">
                 <strong>Telefone / WhatsApp</strong>
-                <span>(11) 99999-9999</span>
+                <span>(11) 97887-4637</span>
               </div>
             </div>
             <div className="info-item">
               <div className="info-icon">🕐</div>
               <div className="info-text">
                 <strong>Horário de funcionamento</strong>
-                <span>Segunda a Sexta: 7h às 21h<br />Sábado: 8h às 13h</span>
+                <span>Segunda a Sexta: 8h às 20h</span>
               </div>
             </div>
             <div className="info-item">

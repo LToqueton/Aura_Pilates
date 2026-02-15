@@ -177,6 +177,12 @@ nav.scrolled {
     max-width: 800px;
 }
 
+.hero-logo {
+    height: 80px;
+    width: auto;
+    margin-bottom: 1.5rem;
+}
+
 .hero-tag {
     font-size: 0.75rem;
     letter-spacing: 0.3em;
@@ -232,7 +238,7 @@ nav.scrolled {
 }
 
 .btn-primary {
-    background: var(--soft-black);
+    background: var(--accent);
     color: var(--warm-white);
 }
 
