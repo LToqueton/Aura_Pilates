@@ -1,10 +1,12 @@
 "use client";
 
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect, useCallback, useRef } from "react";
 
 export default function About() {
   const [currentSlide, setCurrentSlide] = useState(0);
   const totalSlides = 3;
+  const touchStartX = useRef(0);
+  const touchEndX = useRef(0);
 
   const moveCarousel = useCallback((dir: number) => {
     setCurrentSlide((prev) => (prev + dir + totalSlides) % totalSlides);
@@ -17,6 +19,18 @@ export default function About() {
     return () => clearInterval(interval);
   }, [moveCarousel]);
 
+  const handleTouchStart = (e: React.TouchEvent) => {
+    touchStartX.current = e.touches[0].clientX;
+  };
+
+  const handleTouchEnd = (e: React.TouchEvent) => {
+    touchEndX.current = e.changedTouches[0].clientX;
+    const diff = touchStartX.current - touchEndX.current;
+    if (Math.abs(diff) > 50) {
+      moveCarousel(diff > 0 ? 1 : -1);
+    }
+  };
+
   return (
     <section className="about" id="sobre">
       <div className="container">
@@ -25,7 +39,11 @@ export default function About() {
         <p className="section-subtitle">Um espaço onde saúde, movimento e acolhimento se encontram.</p>
         <div className="about-grid">
           <div className="about-carousel">
-            <div className="carousel-wrapper">
+            <div
+              className="carousel-wrapper"
+              onTouchStart={handleTouchStart}
+              onTouchEnd={handleTouchEnd}
+            >
               <div
                 className="carousel-track"
                 style={{ transform: `translateX(-${currentSlide * 100}%)` }}
