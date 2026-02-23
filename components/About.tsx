@@ -8,8 +8,6 @@ export default function About() {
     { src: "/about-2.jpg", alt: "Aura Pilates - Estúdio 2" },
     { src: "/about-3.jpg", alt: "Aura Pilates - Estúdio 3" },
     { src: "/about-4.jpg", alt: "Aura Pilates - Estúdio 4" },
-    { src: "/about-5.jpg", alt: "Aura Pilates - Estúdio 5" },
-    { src: "/about-6.jpg", alt: "Aura Pilates - Estúdio 6" },
   ];
   const [currentSlide, setCurrentSlide] = useState(0);
   const totalSlides = slides.length;
