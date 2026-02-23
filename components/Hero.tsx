@@ -1,6 +1,9 @@
 export default function Hero() {
   return (
     <section className="hero">
+      <div className="hero-bg">
+        <img src="/hero-bg.jpg" alt="" />
+      </div>
       <div className="hero-content">
         <img src="/logo.png" alt="Aura Pilates" className="hero-logo" />
         <h1>Descubra o poder do <em>Pilates</em> para transformar sua vida</h1>
