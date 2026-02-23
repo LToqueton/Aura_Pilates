@@ -26,14 +26,14 @@ export default function Location() {
               <div className="info-icon">🕐</div>
               <div className="info-text">
                 <strong>Horário de funcionamento</strong>
-                <span>Segunda a Sexta: 8h às 20h</span>
+                <span>Segunda a Sexta: 7h às 20h</span>
               </div>
             </div>
             <div className="info-item">
               <div className="info-icon">✉️</div>
               <div className="info-text">
                 <strong>E-mail</strong>
-                <span>contato@aurapilates.com.br</span>
+                <span>aura.pilates25@gmail.com</span>
               </div>
             </div>
           </div>
