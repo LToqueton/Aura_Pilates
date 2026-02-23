@@ -2,8 +2,12 @@ import type { Metadata, Viewport } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Aura Pilates | Itaim Paulista, São Paulo",
+  title: "Aura Pilates",
   description: "Um espaço acolhedor onde cada movimento é guiado com cuidado, técnica e atenção personalizada.",
+  icons: {
+    icon: "/favicon.ico",
+    apple: "/apple-touch-icon.png",
+  },
 };
 
 export const viewport = {
