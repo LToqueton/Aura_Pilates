@@ -3,8 +3,16 @@
 import { useState, useEffect, useCallback, useRef } from "react";
 
 export default function About() {
+  const slides = [
+    { src: "/about-1.jpg", alt: "Aura Pilates - Estúdio 1" },
+    { src: "/about-2.jpg", alt: "Aura Pilates - Estúdio 2" },
+    { src: "/about-3.jpg", alt: "Aura Pilates - Estúdio 3" },
+    { src: "/about-4.jpg", alt: "Aura Pilates - Estúdio 4" },
+    { src: "/about-5.jpg", alt: "Aura Pilates - Estúdio 5" },
+    { src: "/about-6.jpg", alt: "Aura Pilates - Estúdio 6" },
+  ];
   const [currentSlide, setCurrentSlide] = useState(0);
-  const totalSlides = 3;
+  const totalSlides = slides.length;
   const touchStartX = useRef(0);
   const touchEndX = useRef(0);
 
@@ -48,16 +56,13 @@ export default function About() {
                 className="carousel-track"
                 style={{ transform: `translateX(-${currentSlide * 100}%)` }}
               >
-                {[1, 2, 3].map((i) => (
+                {slides.map((slide, i) => (
                   <div key={i} className="carousel-slide">
-                    <div className="carousel-placeholder">
-                      <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1">
-                        <rect x="3" y="3" width="18" height="18" rx="2" />
-                        <circle cx="8.5" cy="8.5" r="1.5" />
-                        <path d="m21 15-5-5L5 21" />
-                      </svg>
-                      <span>Foto {i}</span>
-                    </div>
+                    <img
+                      src={slide.src}
+                      alt={slide.alt}
+                      style={{ width: "100%", height: "100%", objectFit: "cover", borderRadius: "16px" }}
+                    />
                   </div>
                 ))}
               </div>
@@ -65,7 +70,7 @@ export default function About() {
               <button className="carousel-btn carousel-next" onClick={() => moveCarousel(1)}>&#8250;</button>
             </div>
             <div className="carousel-dots">
-              {[0, 1, 2].map((i) => (
+              {slides.map((_, i) => (
                 <span
                   key={i}
                   className={`dot ${i === currentSlide ? "active" : ""}`}
